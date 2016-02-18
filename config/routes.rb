@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :products
+  # ovdje se mogu staviti only ili except da se ne prave rute
+  # resources : products, :excepts => [:new, :create]
 
   root 'home#index'
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,1 +1,13 @@
 <h1>Products page</h1>
+<h2> <%= @products_count %></h2>
+<%if @products_count > 5 %>
+    <h3>Yes</h3>
+<%else%>
+    <h3>no</h3>
+<%end%>
+#ispis liste proizvoda
+
+<h2>Product list</h2>
+<%@products.each do |product|%>
+    <div>id: <%= product.id%>,name: <%= product.name%>, price: <%=product.price%>    </div>
+<%end%>

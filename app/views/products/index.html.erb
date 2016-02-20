@@ -1,13 +1,13 @@
-<stile>
+<style>
   .flash {
-  height:40px;
-  border: 2px solid red;
-  color:red;
-  line-height:40px;
-  margin.bottom: 20px;
-  width: 400px;
+    height: 40px;
+    border: 2px solid red;
+    color: red;
+    line-height: 40px;
+    margin-bottom: 20px;
+    width: 400px;
   }
-</stile>
+</style>
 
 <h1>Products page</h1>
 <h2> Total products : <%= @products_count %></h2>
@@ -15,7 +15,7 @@
 <h2>Product list</h2>
 
 <% unless flash[:notice].nil?%>
-    <div class=""flash"> <%= flash[:notice] %></div>
+    <div class="flash"> <%= flash[:notice] %></div>
 <% end%>
 <%@products.each do |product|%>
     <div>

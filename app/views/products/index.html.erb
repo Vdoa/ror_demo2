@@ -1,13 +1,29 @@
+<stile>
+  .flash {
+  height:40px;
+  border: 2px solid red;
+  color:red;
+  line-height:40px;
+  margin.bottom: 20px;
+  width: 400px;
+  }
+</stile>
+
 <h1>Products page</h1>
-<h2> <%= @products_count %></h2>
-<%if @products_count > 5 %>
-    <h3>Yes</h3>
-<%else%>
-    <h3>no</h3>
-<%end%>
-#ispis liste proizvoda
+<h2> Total products : <%= @products_count %></h2>
 
 <h2>Product list</h2>
+
+<% unless flash[:notice].nil?%>
+    <div class=""flash"> <%= flash[:notice] %></div>
+<% end%>
 <%@products.each do |product|%>
-    <div>id: <%= product.id%>,name: <%= product.name%>, price: <%=product.price%>    </div>
+    <div>
+      id: <%= product.id%>,
+      name: <%= product.name%>,
+      price: <%=product.price%>
+      <%= link_to 'Details', product_path(product)%>
+      <%= link_to 'edit', edit_product_path(product)%>
+      <%= link_to 'Delete', product_path(product), method: :delete %>
+    </div>
 <%end%>
